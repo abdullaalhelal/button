@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .draw_border{
+            box-shadow: inset 0 0 0 4px#6ed6ff;
+            color: #6ed6ff;
+            -webkit-transition: color 0.25s 0.0833333333s;
+            position: relative;
+        }
+        .draw_border::before, .draw_border::after{
+            border: 0 solid transparent;
+            box-sizing: border-box;
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            width: 0;
+            height: 0;
+            bottom: 0;
+            right: 0;
+        }
+        .draw_border::before {
+            border-bottom-width: 4px;
+            border-left-width: 4px;
+        }
+        .draw_border::after{
+            border-top-width: 4px;
+            border-right-width: 4px;
+        }
+        .draw_border:hover{
+            color: #fcd041;
+        }
+        .draw_border:hover::before, .draw_border:hover::after{
+            border-color: #fcd041;
+            -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+            transition: border-color 0s, width 0.25s, height 0.25s;
+            width: 100%;
+            height: 100%;
+        }
+        .draw_border:hover::before {
+            -webkit-transition-delay: 0s, 0s, 0.25s;
+            transition-delay: 0s, 0s, 0.25s;
+        }
+        .draw_border:hover::after {
+            -webkit-transition-delay: 0s, 0.25s, 0s;
+            transition-delay: 0s, 0.25s, 0s;
+        }
+        .btn{
+            background: none;
+            border: none;
+            cursor: pointer;
+            line-height: 1.5;
+            font: 700 1.2rem 'Roboto Slab', sans-serif;
+            padding: 1em 2em;
+            letter-spacing: 0.05rem;
+        }
+        .btn:focus{
+            outline: 2px dotted #68d6be;
+        }
+        body{
+            background: #1f1a25;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn draw_border">ABDULLA AL HELAL</button>
+</body>
+</html>
